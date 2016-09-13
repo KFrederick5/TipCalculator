@@ -40,6 +40,7 @@ public class MainActivity extends AppCompatActivity {
 
 
 
+
     }
 
     private TextWatcher amountTextChangedListener = new TextWatcher() {
@@ -51,21 +52,20 @@ public class MainActivity extends AppCompatActivity {
         @Override
         public void onTextChanged(CharSequence charSequence, int i, int i1, int i2) {
             //Try to get the amount from amountEditText:
-            try{
+            try {
                 double amount = Double.parseDouble(charSequence.toString()) / 100.0;
                 currentBill.setAmount(amount);
-            }
-            catch(NumberFormatException e)
-            {
+            } catch (NumberFormatException e) {
                 amountEditText.setText("");
             }
         }
+
 
         @Override
         public void afterTextChanged(Editable editable) {
             //Do nothing
         }
-    }
+    };
 }
 
 
